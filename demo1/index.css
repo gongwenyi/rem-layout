@@ -1,0 +1,238 @@
+html{
+  font-size: 100px;
+}
+body{
+  background-color: #dad3cb;
+}
+.clear:after{
+  content: '';
+  display: block;
+  height: 0;
+  clear: both;
+}
+header{
+  position: relative;
+  width: 100%;
+  height: 0.48rem;
+  background-color: #f0815b;
+  box-shadow: 0 3px 2px #8d8883;
+}
+header a{
+  position: absolute;
+  left: 0.2rem;
+  top: 0.12rem;
+  display: inline-block;
+  width: 0.14rem;
+  height: 0.23rem;
+  background: 0 0 url(imgs/icon.png) no-repeat;
+  background-size: 1.57rem 0.23rem; 
+}
+header h1{
+  line-height: 0.48rem;
+  text-align: center;
+  color: #fff;
+}
+.content{
+  padding: 0.06rem 0.03rem;
+}
+.content .user{
+  border-radius: 0.04rem;
+  box-shadow: 0 3px #bab4ad;
+  overflow: hidden;
+}
+.banner-box{
+  position: relative;
+  width: 100%;
+  height: 2.1rem;
+  overflow: hidden;
+}
+.banner{
+  width: 900%;
+  height: 100%;
+}
+.banner li{
+  float: left;
+  width: 25%;
+  height: 100%;
+  text-align: center;
+}
+.banner li.li-01{
+  background: 0 0 url(imgs/banner.jpg) no-repeat;
+  /*background-size: cover;*/
+  background-size: 100% 100%;
+}
+.banner li.li-02{
+  background: 0 0 url(imgs/banner02.jpg) no-repeat;
+  /*background-size: cover;*/
+  background-size: 100% 100%;
+}
+.banner li.li-03{
+  background: 0 0 url(imgs/banner03.jpg) no-repeat;
+  /*background-size: cover;*/
+  background-size: 100% 100%;
+}
+.user-head a{
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  margin: 0.2rem auto 0;
+  border: 0.05rem solid rgba(189,172,163,0.8);
+  border-radius: 50%;
+  overflow: hidden;
+}
+.user-head a img{
+  width: 100%;
+}
+.user-head h4{
+  padding-top: 0.1rem;
+  font-size: 18px;
+  color: #fff;
+}
+.user-head p{
+  font-size: 14px;
+  color: #ccc;
+}
+.user-head p span{
+  display: inline-block;
+  width: 0.1rem;
+  height: 0.14rem;
+  margin-right: 0.02rem;
+  background: -0.36rem 0 url(imgs/icon.png) no-repeat;
+  background-size: 1.9rem 0.3rem; 
+}
+.banner-nav{
+  position: absolute;
+  bottom: 0.08rem;
+  display: table;
+  width: 100%;
+  text-align: center;
+  line-height: 1.5;
+}
+.banner-nav span{
+  display: inline-block;
+  width: 0.08rem;
+  height: 0.08rem;
+  margin-right: 0.08rem;
+  background-color: #999;
+  border-radius: 0.08rem;
+}
+
+.banner-nav span:last-child {
+  margin-right: 0;
+}
+.banner-nav span.active{
+  background-color: #fff;
+}
+.banner .user-info{
+  background: 0 0 url(imgs/banner.jpg) no-repeat;
+  background-size: 100% 2.1rem;
+}
+.info{
+  height: 0.4rem;
+  padding-top: 0.1rem;
+  padding-bottom: 0.05rem;
+  background-color: #fff;
+}
+.info > div a{
+  float: left;
+  padding: 0 0.06rem;
+  border-right: 1px solid #e5e5e5;
+}
+.info > div a.border-none{
+  border: 0;
+}
+.info > div a p{
+  font-size: 14px;
+  color: #a49f99;
+}
+.info > div a span{
+  font-weight: bold;
+  color: #79746e;
+}
+.info > a{
+  position: relative;
+  float: right;
+  width: 0.45rem;
+  height: 0.2rem;
+  margin-right: 0.08rem;
+  padding: 0.05rem 0.05rem 0.05rem 0.25rem;
+  line-height: 0.25rem;
+  font-size: 14px;
+  color: #fff;
+  background-color: #705d76;
+  box-shadow: 0 2px 0 #5c4d61;
+  border-radius: 2px;
+}
+.info > a span{
+  position: absolute;
+  left: 0.05rem;
+  top: 0.09rem;
+  display: inline-block;
+  width: 0.16rem;
+  height: 0.16rem;
+  background: -0.14rem 0 url(imgs/icon.png) no-repeat;
+  background-size: 1.57rem 0.23rem; 
+}
+.modul{
+  height: auto;
+  padding-top: 0.08rem;
+}
+.modul a{
+  float: left;
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.07rem;
+  margin-bottom: 0.07rem;
+  /*width: 30%;
+  margin-right: 5%;
+  margin-bottom: 5%;*/
+  box-shadow: 0 2px 0 #bbb4ae;
+  border-radius: 2px;
+  overflow: hidden;
+}
+.modul a:nth-child(3n){
+  margin-right: 0;
+}
+.modul a img{
+  width: 100%;
+}
+footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0.48rem;
+  background-color: #696056;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.5);
+}
+footer a{
+  float: left;
+  width: 20%;
+  height: 0.25rem;
+  padding-top: 0.11rem;
+  padding-bottom: 0.12rem;
+}
+footer a span{
+  display: block;
+  margin: 0 auto;
+  width: 0.23rem;
+  height: 0.25rem;
+  background: url(imgs/icon.png) no-repeat;
+  background-size: 1.57rem 0.23rem;
+}
+.footer-a1 span{
+  background-position: -0.4rem 0;
+}
+.footer-a2 span{
+  background-position: -0.63rem 0;
+}
+.footer-a3 span{
+  background-position: -0.86rem 0;
+}
+.footer-a4 span{
+  background-position: -1.10rem 0;
+}
+.footer-a5 span{
+  background-position: -1.34rem 0;
+}

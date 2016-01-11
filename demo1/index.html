@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
+  <title>移动端页面制作</title>
+  <link rel="stylesheet" href="mobilereset.css">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <header>
+    <a href="javascript:;"></a>
+    <h1>@JessA69</h1>
+  </header>
+  <div class="content">
+    <div class="user">
+      <div class="banner-box">
+        <ul class="banner">
+          <li class="user-head li-01">
+            <a href="javascript:;">
+              <img src="imgs/head.jpg">
+            </a>
+            <h4>Jesica Alba</h4>
+            <p><span></span>Los Angeles, CA</p>
+          </li>
+          <li class="li-02"></li>
+          <li class="li-03"></li>
+        </ul>
+        <div class="banner-nav">
+          <span class="active"></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      <div class="info">
+        <div>
+          <a href="javascript:;">
+            <p>Followers</p>
+            <span>4017</span>
+          </a>
+          <a href="javascript:;">
+            <p>Following</p>
+            <span>54</span>
+          </a>
+          <a class="border-none" href="javascript:;">
+            <p>Photos</p>
+            <span>153</span>
+          </a>
+        </div>
+        <a href="javascript:;">
+          <span></span>
+          Follow
+        </a>
+      </div>
+    </div>
+    <div class="modul clear">
+      <a href="javascript:;"><img src="imgs/01.jpg"></a>
+      <a href="javascript:;"><img src="imgs/02.jpg"></a>
+      <a href="javascript:;"><img src="imgs/03.jpg"></a>
+      <a href="javascript:;"><img src="imgs/04.jpg"></a>
+      <a href="javascript:;"><img src="imgs/05.jpg"></a>
+      <a href="javascript:;"><img src="imgs/06.jpg"></a>
+      <a href="javascript:;"><img src="imgs/01.jpg"></a>
+      <a href="javascript:;"><img src="imgs/02.jpg"></a>
+      <a href="javascript:;"><img src="imgs/03.jpg"></a>
+      <a href="javascript:;"><img src="imgs/04.jpg"></a>
+      <a href="javascript:;"><img src="imgs/05.jpg"></a>
+      <a href="javascript:;"><img src="imgs/06.jpg"></a>
+      <a href="javascript:;"><img src="imgs/01.jpg"></a>
+      <a href="javascript:;"><img src="imgs/02.jpg"></a>
+      <a href="javascript:;"><img src="imgs/03.jpg"></a>
+      <a href="javascript:;"><img src="imgs/04.jpg"></a>
+      <a href="javascript:;"><img src="imgs/05.jpg"></a>
+      <a href="javascript:;"><img src="imgs/06.jpg"></a>
+    </div>
+  </div>
+  <footer>
+    <a class="footer-a1" href="javascript:;"><span></span></a>
+    <a class="footer-a2" href="javascript:;"><span></span></a>
+    <a class="footer-a3" href="javascript:;"><span></span></a>
+    <a class="footer-a4" href="javascript:;"><span></span></a>
+    <a class="footer-a5" href="javascript:;"><span></span></a>
+  </footer>
+  
+  <script>
+    (function (doc, win) {
+      var docEl = doc.documentElement,
+        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+        recalc = function () {
+          var clientWidth = docEl.clientWidth;
+          if (!clientWidth) return;
+          var dpr = window.devicePixelRatio; //设备像素比
+          //此处的100为页面html设置的字体大小值（为方便计算一般用100px）
+          //此处的320为视觉稿宽度的一半
+          //根据设备可视区的宽度以及设备像素比动态改变fontSize值
+          docEl.style.fontSize = (dpr / 2) * 100 * (clientWidth  / 320) + 'px'; 
+        };
+      if (!doc.addEventListener) return;
+      win.addEventListener(resizeEvt, recalc, false);
+      doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+  </script>
+  <script src="http://cdn.bootcss.com/zepto/1.1.6/zepto.min.js"></script>
+  <script src="toucher.js"></script>
+  <script src="fx.js"></script>
+  <script>
+    $(function(){
+      var $banner = $('.banner'),
+          $bannerLis = $banner.find('li'),
+          $bannerNav = $('.banner-nav'), //banner图导航
+          $bannerNavSpans = $bannerNav.find('span'),
+          length = $bannerLis.length, //banner中轮播图的数量
+          now_index = left = 0, //当前图片的下标以及$banner的left值
+          isAnimate = false; //是否正在执行动画标识
+
+      //初始化滑页控件的宽度
+      $banner.css('width', (100 * length) +　'%');
+      $bannerLis.css('width', (100 / length) + '%');
+/*
+      $banner.swipeLeft(function(){
+        swipeTo('left', $(this));
+      });
+
+      $banner.swipeRight(function(){
+        swipeTo('right', $(this));
+      });
+*/
+      util.toucher($banner[0])
+      .on('swipeLeft', function(){
+        swipeTo('left', $(this));
+        return false;
+      })
+      .on('swipeRight', function(){
+        swipeTo('right', $(this));
+        return false;
+      });
+
+      function swipeTo(direction, $this){
+        if(isAnimate) {
+            return false;
+        }
+        isAnimate = true;
+
+        if(direction === 'left'){
+          now_index = now_index++ >= length-1 ? length-1 : now_index;
+        }
+        else if(direction === 'right'){
+          now_index = now_index-- <= 0 ? 0 : now_index;
+        }
+
+        left = now_index * (100 / length);
+        var targetLeft = -left + '%';
+        $this.animate({'-webkit-transform':'translateX(' + targetLeft +　')'},500, 'ease-out', function(){
+          isAnimate = false;
+        });
+        $bannerNavSpans.removeClass('active').eq(now_index).addClass('active');
+      }
+
+    });
+  </script>
+</body>
+</html>

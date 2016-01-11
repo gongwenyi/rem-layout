@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>移动端案例-product页面</title>
+  <link rel="stylesheet" type="text/css" href="css/mobilereset.css">
+  <link rel="stylesheet" href="css/product.css">
+  <link href="http://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+  <header class="header main-header">
+    <h1>Product Details</h1>
+    <a class="return" href="javascript:;" onClick="javascript:history.back(-1);"><i class="fa fa-angle-left"></i></a>
+    <a class="open-modul" href="javascript:;"><i class="fa fa-navicon"></i></a>
+  </header>
+  <div class="modul">
+    <div class="header modul-header">
+      <h1>Menu</h1>
+      <a class="close-modul" href="javascript:;"><i class="fa fa-close"></i></a>
+    </div>
+    <ul class="modul-list">
+      <li>
+        <a href="javascript:;"><i class="fa fa-user"></i>Profile</a>
+      </li>
+      <li>
+        <a href="javascript:;"><i class="fa fa-envelope-o"></i>Inbox</a>
+      </li>
+      <li class="current">
+        <a href="javascript:;"><i class="fa fa-map-marker"></i>Location</a>
+      </li>
+      <li>
+        <a href="javascript:;"><i class="fa fa-question"></i>FAQs</a>
+      </li>
+      <li>
+        <a href="javascript:;"><i class="fa fa-gear"></i>Settings</a>
+      </li>
+      <li>
+        <a href="javascript:;"><i class="fa fa-share"></i>Sign Out</a>
+      </li>
+    </ul>
+  </div>
+  <div class="carousel">
+    <ul class="img-list">
+      <li><img src="imgs/food01.jpg"></li>
+      <li><img src="imgs/food02.jpg"></li>
+      <li><img src="imgs/food03.jpg"></li>
+      <li><img src="imgs/food04.jpg"></li>
+    </ul>
+    <div class="img-nav">
+      <span class="current"></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <div class="product">
+    <div class="product-info">
+      <div>
+        <h3>Fresh Homemade Burger</h3>
+        <p>Price:<span>$5</span><a href="javascript:;">$10</a></p>
+        <div class="stars">
+          <a class="active" href="javascript:;"><i class="fa fa-star"></i></a>
+          <a class="active" href="javascript:;"><i class="fa fa-star"></i></a>
+          <a class="active" href="javascript:;"><i class="fa fa-star"></i></a>
+          <a class="active" href="javascript:;"><i class="fa fa-star"></i></a>
+          <a href="javascript:;"><i class="fa fa-star"></i></a>
+          <span>(215)</span>
+        </div>
+      </div>
+      <a href="javascript:;"><i class="fa fa-shopping-cart"></i></a>
+    </div>
+    <article>
+      <h2>Description</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sed leo tellus. Praesent nec vehicula ligula, non laoreet ligula. Maecenas at massa eget orci porttitor semper. Sed lobortis magna in faucibus commodo. Ut purus odio, gravida sit amet laoreet at, dictum et urna. </p>
+    </article>
+  </div>
+
+  <script>
+    (function (doc, win) {
+      var docEl = doc.documentElement,
+        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+        recalc = function () {
+          var clientWidth = docEl.clientWidth;
+          if (!clientWidth) return;
+          var dpr = window.devicePixelRatio; //设备像素比
+          //此处的100为页面html设置的字体大小值（为方便计算一般用100px）
+          //此处的320为视觉稿宽度的一半
+          //根据设备可视区的宽度以及设备像素比动态改变fontSize值
+          docEl.style.fontSize = (dpr / 2) * 100 * (clientWidth  / 320) + 'px'; 
+        };
+      if (!doc.addEventListener) return;
+      win.addEventListener(resizeEvt, recalc, false);
+      doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+  </script>
+  <script src="http://cdn.bootcss.com/zepto/1.1.6/zepto.min.js"></script>
+  <script src="js/toucher.js"></script>
+  <script src="js/fx.js"></script>
+  <script>
+    $(function(){
+      var openModul = $('.open-modul')[0],
+          closeModul = $('.close-modul')[0],
+          $modul = $('.modul'),
+          $lis = $('.modul-list li'),
+          $as = $('.modul-list li a');
+
+      util.toucher(openModul).on('singleTap', function(){
+        $modul.show();
+      });
+      util.toucher(closeModul).on('singleTap', function(){
+        $modul.hide();
+      });
+
+      $as.each(function(index){
+        var $parent = $(this).parent();
+        util.toucher($(this)[0]).on('singleTap', function(){
+          $lis.removeClass('current');
+          $parent.addClass('current');
+        })
+      });
+
+      //清除在弹出层上滑动时下面的body发生滚动
+      util.toucher($modul[0]).on('swipe', function(){
+        return false;
+      });
+
+    });
+  </script>
+  <script>
+    $(function(){
+      //图片轮播
+      var $carousel = $('.carousel'),
+          $imgList = $carousel.find('.img-list'), 
+          $imgLis = $imgList.find('li'),
+          $imgNavs = $carousel.find('.img-nav span'),
+          length = $imgLis.length,
+          nowIndex = translatex = 0,
+          isAnimated = false;
+      //初始化ul以及每个li的宽度
+      $imgList.css('width', length * 100 + '%');
+      $imgLis.css('width', 100 / length + '%');
+
+      //左滑动
+      util.toucher($imgList[0]).on('swipeLeft', function(){
+        move('left', $(this));
+      });
+      //右滑动
+      util.toucher($imgList[0]).on('swipeRight', function(){
+        move('right', $(this));
+      });
+
+      function move(direction, $this){
+        if(isAnimated){
+          return false;
+        }
+        isAnimated = true;
+        if(direction == 'left'){
+          nowIndex = nowIndex++ >= length-1 ? length-1 : nowIndex;
+        }else if(direction == 'right'){
+          nowIndex = nowIndex-- <= 0 ? 0 : nowIndex;
+        }
+        translatex = nowIndex * 100 / length;
+        var target_translatex = -translatex + '%';
+        $imgList.animate({'-webkit-transform': 'translateX('+ target_translatex +')'},800,'ease-out',function(){
+          isAnimated = false;
+        });
+        $imgNavs.removeClass('current').eq(nowIndex).addClass('current');
+      }
+    });
+  </script>
+</body>
+</html>

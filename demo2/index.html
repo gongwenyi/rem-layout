@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>移动端案例-美食网站首页</title>
+  <link rel="stylesheet" href="css/mobilereset.css">
+  <link rel="stylesheet" href="css/index.css">
+  <link href="http://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+  <header class="header main-header">
+    <h1>List Screen</h1>
+    <a class="open-modul" href="javascript:;"><i class="fa fa-navicon"></i></a>
+  </header>
+  <div class="modul">
+    <div class="header modul-header">
+      <h1>Menu</h1>
+      <a class="close-modul" href="javascript:;"><i class="fa fa-close"></i></a>
+    </div>
+    <ul class="modul-list">
+      <li>
+        <a href="javascript:;"><i class="fa fa-user"></i>Profile</a>
+      </li>
+      <li>
+        <a href="javascript:;"><i class="fa fa-envelope-o"></i>Inbox</a>
+      </li>
+      <li class="current">
+        <a href="javascript:;"><i class="fa fa-map-marker"></i>Location</a>
+      </li>
+      <li>
+        <a href="javascript:;"><i class="fa fa-question"></i>FAQs</a>
+      </li>
+      <li>
+        <a href="javascript:;"><i class="fa fa-gear"></i>Settings</a>
+      </li>
+      <li>
+        <a href="javascript:;"><i class="fa fa-share"></i>Sign Out</a>
+      </li>
+    </ul>
+  </div>
+  <div class="content">
+    <div class="search">
+      <a><i class="fa fa-search"></i></a>
+      <input type="text" placeholder="Search">
+    </div>
+    <a class="user-list" href="shop.html">
+      <div class="user-head user-head-01"></div>
+      <div class="user-info">
+        <h2>John Henry Doe</h2>
+        <p>San Francisco,CA</p>
+      </div>
+      <span><i class="fa fa-angle-right"></i></span>
+    </a>
+    <a class="user-list" href="shop.html">
+      <div class="user-head user-head-02"></div>
+      <div class="user-info">
+        <h2>John Henry Doe</h2>
+        <p>San Francisco,CA</p>
+      </div>
+      <span><i class="fa fa-angle-right"></i></span>
+    </a>
+    <a class="user-list" href="shop.html">
+      <div class="user-head user-head-03"></div>
+      <div class="user-info">
+        <h2>John Henry Doe</h2>
+        <p>San Francisco,CA</p>
+      </div>
+      <span><i class="fa fa-angle-right"></i></span>
+    </a>
+    <a class="user-list" href="shop.html">
+      <div class="user-head user-head-04"></div>
+      <div class="user-info">
+        <h2>John Henry Doe</h2>
+        <p>San Francisco,CA</p>
+      </div>
+      <span><i class="fa fa-angle-right"></i></span>
+    </a>
+    <a class="user-list" href="shop.html">
+      <div class="user-head user-head-05"></div>
+      <div class="user-info">
+        <h2>John Henry Doe</h2>
+        <p>San Francisco,CA</p>
+      </div>
+      <span><i class="fa fa-angle-right"></i></span>
+    </a>
+    <a class="user-list" href="shop.html">
+      <div class="user-head user-head-01"></div>
+      <div class="user-info">
+        <h2>John Henry Doe</h2>
+        <p>San Francisco,CA</p>
+      </div>
+      <span><i class="fa fa-angle-right"></i></span>
+    </a>
+    <a class="user-list" href="shop.html">
+      <div class="user-head user-head-02"></div>
+      <div class="user-info">
+        <h2>John Henry Doe</h2>
+        <p>San Francisco,CA</p>
+      </div>
+      <span><i class="fa fa-angle-right"></i></span>
+    </a>
+    <a class="user-list" href="shop.html">
+      <div class="user-head user-head-03"></div>
+      <div class="user-info">
+        <h2>John Henry Doe</h2>
+        <p>San Francisco,CA</p>
+      </div>
+      <span><i class="fa fa-angle-right"></i></span>
+    </a>
+    <a class="user-list" href="shop.html">
+      <div class="user-head user-head-04"></div>
+      <div class="user-info">
+        <h2>John Henry Doe</h2>
+        <p>San Francisco,CA</p>
+      </div>
+      <span><i class="fa fa-angle-right"></i></span>
+    </a>
+    <a class="user-list" href="shop.html">
+      <div class="user-head user-head-05"></div>
+      <div class="user-info">
+        <h2>John Henry Doe</h2>
+        <p>San Francisco,CA</p>
+      </div>
+      <span><i class="fa fa-angle-right"></i></span>
+    </a>
+  </div>
+  <footer>
+    <div>
+      <a href="javascript:;"><i class="fa fa-user-plus"></i></a>
+      <a href="javascript:;"><i class="fa fa-gear"></i></a>
+      <a href="javascript:;"><i class="fa fa-ellipsis-h"></i></a>
+    </div>
+  </footer>
+  <script>
+    (function (doc, win) {
+      var docEl = doc.documentElement,
+        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+        recalc = function () {
+          var clientWidth = docEl.clientWidth;
+          if (!clientWidth) return;
+          var dpr = window.devicePixelRatio; //设备像素比
+          //此处的100为页面html设置的字体大小值（为方便计算一般用100px）
+          //此处的320为视觉稿宽度的一半
+          //根据设备可视区的宽度以及设备像素比动态改变fontSize值
+          docEl.style.fontSize = (dpr / 2) * 100 * (clientWidth  / 320) + 'px'; 
+        };
+      if (!doc.addEventListener) return;
+      win.addEventListener(resizeEvt, recalc, false);
+      doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+  </script>
+  <script src="http://cdn.bootcss.com/zepto/1.1.6/zepto.min.js"></script>
+  <script src="js/toucher.js"></script>
+  <script>
+    $(function(){
+      var openModul = $('.open-modul')[0],
+          closeModul = $('.close-modul')[0],
+          $modul = $('.modul'),
+          $lis = $('.modul-list li'),
+          $as = $('.modul-list li a');
+
+
+      util.toucher(openModul).on('singleTap', function(){
+        $modul.show();
+      });
+      util.toucher(closeModul).on('singleTap', function(){
+        $modul.hide();
+      });
+
+      $as.each(function(index){
+        var $parent = $(this).parent();
+        util.toucher($(this)[0]).on('singleTap', function(){
+          $lis.removeClass('current');
+          $parent.addClass('current');
+        })
+      });
+
+      //清除在弹出层上滑动时下面的body发生滚动
+      util.toucher($modul[0]).on('swipe', function(){
+        return false;
+      })
+
+    })
+  </script>
+</body>
+</html>
