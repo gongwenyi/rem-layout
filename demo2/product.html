@@ -87,7 +87,8 @@
           //此处的100为页面html设置的字体大小值（为方便计算一般用100px）
           //此处的320为视觉稿宽度的一半
           //根据设备可视区的宽度以及设备像素比动态改变fontSize值
-          docEl.style.fontSize = (dpr / 2) * 100 * (clientWidth  / 320) + 'px'; 
+          // docEl.style.fontSize = (dpr / 2) * 100 * (clientWidth  / 320) + 'px';
+          docEl.style.fontSize = 100 * (clientWidth  / 320) + 'px';
         };
       if (!doc.addEventListener) return;
       win.addEventListener(resizeEvt, recalc, false);
@@ -131,7 +132,7 @@
     $(function(){
       //图片轮播
       var $carousel = $('.carousel'),
-          $imgList = $carousel.find('.img-list'), 
+          $imgList = $carousel.find('.img-list'),
           $imgLis = $imgList.find('li'),
           $imgNavs = $carousel.find('.img-nav span'),
           length = $imgLis.length,
