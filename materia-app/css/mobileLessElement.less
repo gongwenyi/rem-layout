@@ -1,0 +1,103 @@
+// 颜色变量
+@coral: #ff6470;
+@primary: #6496f0;
+@google: #039be5;
+@twitter: #55acee;
+@dribbble: #ea4c89;
+@success: #0f9d58;
+@error: #f44336;
+@info: #039be5;
+@warn: #ff5722;
+@red: #CC323C;
+// 线性渐变
+.gradient(@color: #F5F5F5, @direction: bottom, @start: #EEE, @stop: #FFF) {
+  background: @color;
+  background: -webkit-linear-gradient(@direction, @start, @stop);
+  background: linear-gradient(@direction, @start 0%, @stop 100%);
+}
+// 盒阴影 外阴影
+.box-shadow(@arguments) {
+  -webkit-box-shadow: @arguments;
+  box-shadow: @arguments;
+}
+.drop-shadow(@x-axis: 0, @y-axis: 1px, @blur: 2px, @alpha: 0.1) {
+  -webkit-box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+  box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+}
+// 盒阴影 内阴影
+.inner-shadow(@horizontal:0, @vertical:1px, @blur:2px, @alpha: 0.4) {
+  -webkit-box-shadow: inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
+  box-shadow: inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
+}
+// 圆角
+.border-radius(@radius: 2px) {
+  -webkit-border-radius: @radius;
+  border-radius: @radius;
+}
+// 透明度
+.opacity(@opacity: 0.5) {
+  -webkit-opacity: @opacity;
+  opacity: @opacity;
+}
+// 动画过渡时间
+.transition-duration(@duration: 0.2s) {
+  -webkit-transition-duration: @duration;
+  transition-duration: @duration;
+}
+// 变换
+.transform(...) {
+  -webkit-transform: @arguments;
+  transform: @arguments;
+}
+// 变换 旋转
+.rotate(@deg:5deg){
+  .transform(rotate(@deg));
+}
+// 变换 缩放
+.scale(@ratio:1.5){
+  .transform(scale(@ratio));
+}
+// 变换 位移
+.translate(@x:0, @y:0) {
+  .transform(translate(@x, @y));
+}
+// 过渡动画
+.transition(@duration:0.2s, @ease:ease-out) {
+  -webkit-transition: all @duration @ease;
+  transition: all @duration @ease;
+}
+// 动画
+.animation(@arguments){
+  -webkit-animation: @arguments;
+  animation: @arguments;
+}
+// 盒模型
+.box-sizing(@sizing: border-box) {
+  -webkit-box-sizing: @sizing;
+  box-sizing: @sizing;
+}
+// 不选中
+.user-select(@argument: none) {
+  -webkit-user-select: @argument;
+  user-select: @argument;
+}
+// 多列
+.columns(@colwidth: 250px, @colcount: 0, @colgap: 50px, @columnRuleColor: #EEE, @columnRuleStyle: solid, @columnRuleWidth: 1px) {
+  -webkit-column-width: @colwidth;
+  -webkit-column-count: @colcount;
+  -webkit-column-gap: @colgap;
+  -webkit-column-rule-color: @columnRuleColor;
+  -webkit-column-rule-style: @columnRuleStyle;
+  -webkit-column-rule-width: @columnRuleWidth;
+  column-width: @colwidth;
+  column-count: @colcount;
+  column-gap: @colgap;
+  column-rule-color: @columnRuleColor;
+  column-rule-style: @columnRuleStyle;
+  column-rule-width: @columnRuleWidth;
+}
+// 背景绘制区域
+.background-clip(@argument: padding-box) {
+  -webkit-background-clip: @argument;
+  background-clip: @argument;
+}

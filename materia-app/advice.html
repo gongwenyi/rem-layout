@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>our advice</title>
+  <script>
+    (function (doc, win) {
+      var docEl = doc.documentElement,
+        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+        recalc = function () {
+          var clientWidth = document.getElementById('wrap').offsetWidth || docEl.clientWidth;
+          if (!clientWidth) return;
+          var dpr = window.devicePixelRatio; //设备像素比
+          //此处的100为页面html设置的字体大小值（为方便计算一般用100px）
+          //此处的320为视觉稿宽度的一半
+          //根据设备可视区的宽度以及设备像素比动态改变fontSize值
+          //如果计算dpr,在iphone6 plus等dpr较高的浏览器中布局会错乱
+          // docEl.style.fontSize = (dpr / 2) * 100 * (clientWidth  / 320) + 'px';
+          docEl.style.fontSize = 100 * (clientWidth  / 320) + 'px';
+        };
+      if (!doc.addEventListener) return;
+      win.addEventListener(resizeEvt, recalc, false);
+      doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+  </script>
+  <link rel="stylesheet" href="css/mobilereset.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/advice.css">
+</head>
+<body>
+  <div id="wrap">
+    <!-- 遮罩层 -->
+    <div class="mask"></div>
+    <!-- 购物车 -->
+    <div class="mask-shopcar">
+      <div class="mask-shopcar-header">
+        <div class="clearfix">
+          <h1 class="fl">Your Cart</h1>
+          <a href="javascript:;" class="fa-icon shopcar-close fr"><i class="fa fa-close"></i></a>
+        </div>
+      </div>
+      <div class="shopcar-cont">
+        <ul class="shopcar-list">
+          <li class="shopcar-list-item">
+            <div class="shopcar-product">
+              <div class="shopcar-product-delete fl"><i class="fa fa-trash-o"></i></div>
+              <div class="shopcar-product-info fl">
+                <div class="product-info-img fl">
+                  <img src="imgs/01-small.png">
+                </div>
+                <div class="product-info-text fl">
+                  <p class="info-text-name ellipsis">Muffin Dress Secords Rodius</p>
+                  <p class="info-text-size">Size: <span>S</span></p>
+                  <p class="info-text-price">$<span>112,00</span></p>
+                </div>
+                <div class="product-info-num fr">
+                  <div class="info-num-num fl">1</div>
+                  <div class="info-num-control fr">
+                    <a href="javascript:;" class="info-num-add"><i class="fa fa-chevron-up"></i></a>
+                    <a href="javascript:;" class="info-num-cut disable"><i class="fa fa fa-chevron-down"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="shopcar-list-item">
+            <div class="shopcar-product">
+              <div class="shopcar-product-delete fl"><i class="fa fa-trash-o"></i></div>
+              <div class="shopcar-product-info fl">
+                <div class="product-info-img fl">
+                  <img src="imgs/02-small.png">
+                </div>
+                <div class="product-info-text fl">
+                  <p class="info-text-name ellipsis">Gorgeus Red Cap</p>
+                  <p class="info-text-size">Size: <span>S</span></p>
+                  <p class="info-text-price">$<span>78,00</span></p>
+                </div>
+                <div class="product-info-num fr">
+                  <div class="info-num-num fl">1</div>
+                  <div class="info-num-control fr">
+                    <a href="javascript:;" class="info-num-add"><i class="fa fa-chevron-up"></i></a>
+                    <a href="javascript:;" class="info-num-cut disable"><i class="fa fa fa-chevron-down"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="shopcar-list-item">
+            <div class="shopcar-product">
+              <div class="shopcar-product-delete fl"><i class="fa fa-trash-o"></i></div>
+              <div class="shopcar-product-info fl">
+                <div class="product-info-img fl">
+                  <img src="imgs/03-small.png">
+                </div>
+                <div class="product-info-text fl">
+                  <p class="info-text-name ellipsis">Black Trainers</p>
+                  <p class="info-text-size">Size: <span>XL</span></p>
+                  <p class="info-text-price">$<span>256,00</span></p>
+                </div>
+                <div class="product-info-num fr">
+                  <div class="info-num-num fl">1</div>
+                  <div class="info-num-control fr">
+                    <a href="javascript:;" class="info-num-add"><i class="fa fa-chevron-up"></i></a>
+                    <a href="javascript:;" class="info-num-cut disable"><i class="fa fa fa-chevron-down"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <p class="total-price">$<span class="total-price-num">100,00</span></p>
+        <div class="shopcar-cont-btn">
+          <a href="javascript:;" class="btn btn-proceed">PROCEED TO CHECKOUT</a>
+        </div>
+      </div>
+    </div>
+    <!-- 头部 -->
+    <header>
+      <div class="clearfix">
+        <a href="#" onClick="javascript :history.back(-1);" class="fa-icon chevron-left fl"><i class="fa fa-chevron-left"></i></a>
+        <h1 class="fl">Our Advice</h1>
+        <a href="javascript:;" class="fa-icon shopcar shopcar-open fr">
+          <i class="fa fa-shopping-cart"></i>
+          <span class="shopcar-num">3</span>
+        </a>
+      </div>
+      <div class="filter-nav clearfix">
+        <a href="advice.html" class="current">ALL</a>
+        <a href="javascript:;">MAN</a>
+        <a href="javascript:;">WOMAN</a>
+        <a href="javascript:;">KID</a>
+      </div>
+    </header>
+    <!-- banner -->
+    <div class="banner">
+      <a href="products.html">
+        <div class="banner-item banner-item-man">
+            <img class="banner-img" src="imgs/advice-banner-man.png">
+          <div class="banner-text-man">
+            <h2>Discover our sales</h2>
+            <p>Start shopping!</p>
+          </div>
+        </div>
+      </a>
+      <a href="products.html">
+        <div class="banner-item banner-item-woman">
+            <img class="banner-img" src="imgs/advice-banner-woman.png">
+          <div class="banner-text-woman">
+            <h2>ULTIMATE COLLECTION</h2>
+            <p>FROM $142</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    <!-- 搜索 -->
+    <div class="search">
+      <a href="javascript:;" class="search-submit"><i class="fa fa-search"></i></a>
+      <input class="search-text" type="text" placeholder="Search a item...">
+    </div>
+    <!-- banner列表 -->
+    <div class="banners">
+      <ul class="banners-list clearfix">
+        <li class="banners-list-item">
+          <a href="javascript:;" class="list-item-content">
+            <div class="item-content-img">
+              <img src="imgs/advice-banner-list-01.png">
+            </div>
+            <div class="item-content-info">
+              <p class="item-content-info-name ellipsis">SUMMER 2016</p>
+            </div>
+          </a>
+        </li>
+        <li class="banners-list-item">
+          <a href="javascript:;" class="list-item-content">
+            <div class="item-content-img">
+              <img src="imgs/advice-banner-list-02.png">
+            </div>
+            <div class="item-content-info">
+              <p class="item-content-info-name ellipsis">WINTER 15/16</p>
+            </div>
+          </a>
+        </li>
+        <li class="banners-list-item">
+          <a href="javascript:;" class="list-item-content">
+            <div class="item-content-img">
+              <img src="imgs/advice-banner-list-03.png">
+            </div>
+            <div class="item-content-info">
+              <p class="item-content-info-name ellipsis">PREMIUM</p>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!-- 正在加载按钮 -->
+    <div class="onload">
+      <i class="fa fa-spinner"></i>
+    </div>
+  </div>
+  <script src="js/jquery-2.1.4.min.js"></script>
+  <script src="js/baidu-touch.js"></script>
+  <script src="js/advice.js"></script>
+</body>
+</html>

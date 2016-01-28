@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>materia shop</title>
+  <script>
+    (function (doc, win) {
+      var docEl = doc.documentElement,
+        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+        recalc = function () {
+          var clientWidth = document.getElementById('wrap').offsetWidth || docEl.clientWidth;
+          if (!clientWidth) return;
+          var dpr = window.devicePixelRatio; //设备像素比
+          //此处的100为页面html设置的字体大小值（为方便计算一般用100px）
+          //此处的320为视觉稿宽度的一半
+          //根据设备可视区的宽度以及设备像素比动态改变fontSize值
+          //如果计算dpr,在iphone6 plus等dpr较高的浏览器中布局会错乱
+          // docEl.style.fontSize = (dpr / 2) * 100 * (clientWidth  / 320) + 'px';
+          docEl.style.fontSize = 100 * (clientWidth  / 320) + 'px';
+        };
+      if (!doc.addEventListener) return;
+      win.addEventListener(resizeEvt, recalc, false);
+      doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+  </script>
+  <link rel="stylesheet" href="css/mobilereset.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+  <div id="wrap">
+    <!-- 遮罩层 -->
+    <div class="mask"></div>
+    <!-- 分类列表 -->
+    <div class="mask-nav">
+      <div class="looking-for">
+        <p>You looking for?</p>
+        <div class="looking-for-sex clearfix">
+          <a href="javascript:;" class="btn btn-man fl">MAN</a>
+          <a href="javascript:;" class="btn btn-woman fr">WOMAN</a>
+        </div>
+      </div>
+      <ul class="nav-list">
+        <li class="nav-list-item">
+          <div class="nav-list-item-menu">
+            <span class="item-menu-span01"><i class="fa fa-male"></i></span>
+            <span class="item-menu-span02">CLOTHINGS</span>
+            <span class="item-menu-span03 fr"><i class="fa fa-angle-down"></i></span>
+          </div>
+          <div class="nav-list-item-options">
+            <a href="javascript:;">Sneakers</a>
+            <a href="javascript:;">Sandals</a>
+            <a href="javascript:;">Boots</a>
+            <a href="javascript:;">Slippers</a>
+          </div>
+        </li>
+        <li class="nav-list-item">
+          <div class="nav-list-item-menu">
+            <span class="item-menu-span01"><i class="fa fa-qq"></i></span>
+            <span class="item-menu-span02">SHOES</span>
+            <span class="item-menu-span03 fr"><i class="fa fa-angle-down"></i></span>
+          </div>
+          <div class="nav-list-item-options">
+            <a href="javascript:;">Sneakers</a>
+            <a href="javascript:;">Sandals</a>
+            <a href="javascript:;">Boots</a>
+            <a href="javascript:;">Slippers</a>
+          </div>
+        </li>
+        <li class="nav-list-item">
+          <div class="nav-list-item-menu">
+            <span class="item-menu-span01"><i class="fa fa-weixin"></i></span>
+            <span class="item-menu-span02">SPORTS</span>
+            <span class="item-menu-span03 fr"><i class="fa fa-angle-down"></i></span>
+          </div>
+          <div class="nav-list-item-options">
+            <a href="javascript:;">Sneakers</a>
+            <a href="javascript:;">Sandals</a>
+            <a href="javascript:;">Boots</a>
+            <a href="javascript:;">Slippers</a>
+          </div>
+        </li>
+        <li class="nav-list-item">
+          <div class="nav-list-item-menu">
+            <span class="item-menu-span01"><i class="fa fa-windows"></i></span>
+            <span class="item-menu-span02">BAGS&nbsp;&&nbsp;ACCESSORY</span>
+            <span class="item-menu-span03 fr"><i class="fa fa-angle-down"></i></span>
+          </div>
+          <div class="nav-list-item-options">
+            <a href="javascript:;">Sneakers</a>
+            <a href="javascript:;">Sandals</a>
+            <a href="javascript:;">Boots</a>
+            <a href="javascript:;">Slippers</a>
+          </div>
+        </li>
+        <li class="nav-list-item-line"></li>
+        <li class="nav-list-item-user">
+          <div class="nav-list-item-menu">
+            <span class="item-menu-span01"><i class="fa fa-user"></i></span>
+            <span class="item-menu-span02">ACCOUNT</span>
+          </div>
+        </li>
+        <li class="nav-list-item-setting">
+          <div class="nav-list-item-menu">
+            <span class="item-menu-span01"><i class="fa fa-gear"></i></span>
+            <span class="item-menu-span02">SETTINGS</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <!-- 购物车 -->
+    <div class="mask-shopcar">
+      <div class="mask-shopcar-header">
+        <div class="clearfix">
+          <h1 class="fl">Your Cart</h1>
+          <a href="javascript:;" class="fa-icon shopcar-close fr"><i class="fa fa-close"></i></a>
+        </div>
+      </div>
+      <div class="shopcar-cont">
+        <ul class="shopcar-list">
+          <li class="shopcar-list-item">
+            <div class="shopcar-product">
+              <div class="shopcar-product-delete fl"><i class="fa fa-trash-o"></i></div>
+              <div class="shopcar-product-info fl">
+                <div class="product-info-img fl">
+                  <img src="imgs/01-small.png">
+                </div>
+                <div class="product-info-text fl">
+                  <p class="info-text-name ellipsis">Muffin Dress Secords Rodius</p>
+                  <p class="info-text-size">Size: <span>S</span></p>
+                  <p class="info-text-price">$<span>112,00</span></p>
+                </div>
+                <div class="product-info-num fr">
+                  <div class="info-num-num fl">1</div>
+                  <div class="info-num-control fr">
+                    <a href="javascript:;" class="info-num-add"><i class="fa fa-chevron-up"></i></a>
+                    <a href="javascript:;" class="info-num-cut disable"><i class="fa fa fa-chevron-down"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="shopcar-list-item">
+            <div class="shopcar-product">
+              <div class="shopcar-product-delete fl"><i class="fa fa-trash-o"></i></div>
+              <div class="shopcar-product-info fl">
+                <div class="product-info-img fl">
+                  <img src="imgs/02-small.png">
+                </div>
+                <div class="product-info-text fl">
+                  <p class="info-text-name ellipsis">Gorgeus Red Cap</p>
+                  <p class="info-text-size">Size: <span>S</span></p>
+                  <p class="info-text-price">$<span>78,00</span></p>
+                </div>
+                <div class="product-info-num fr">
+                  <div class="info-num-num fl">1</div>
+                  <div class="info-num-control fr">
+                    <a href="javascript:;" class="info-num-add"><i class="fa fa-chevron-up"></i></a>
+                    <a href="javascript:;" class="info-num-cut disable"><i class="fa fa fa-chevron-down"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="shopcar-list-item">
+            <div class="shopcar-product">
+              <div class="shopcar-product-delete fl"><i class="fa fa-trash-o"></i></div>
+              <div class="shopcar-product-info fl">
+                <div class="product-info-img fl">
+                  <img src="imgs/03-small.png">
+                </div>
+                <div class="product-info-text fl">
+                  <p class="info-text-name ellipsis">Black Trainers</p>
+                  <p class="info-text-size">Size: <span>XL</span></p>
+                  <p class="info-text-price">$<span>256,00</span></p>
+                </div>
+                <div class="product-info-num fr">
+                  <div class="info-num-num fl">1</div>
+                  <div class="info-num-control fr">
+                    <a href="javascript:;" class="info-num-add"><i class="fa fa-chevron-up"></i></a>
+                    <a href="javascript:;" class="info-num-cut disable"><i class="fa fa fa-chevron-down"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <p class="total-price">$<span class="total-price-num">100,00</span></p>
+        <div class="shopcar-cont-btn">
+          <a href="javascript:;" class="btn btn-proceed">PROCEED TO CHECKOUT</a>
+        </div>
+      </div>
+    </div>
+    <!-- 头部 -->
+    <header>
+      <div class="clearfix">
+        <a href="javascript:;" class="fa-icon navigation fl"><i class="fa fa-bars"></i></a>
+        <h1 class="fl">eCommerce</h1>
+        <div class="fr">
+          <a href="javascript:;" class="fa-icon shopcar shopcar-open">
+            <i class="fa fa-shopping-cart"></i>
+            <span class="shopcar-num">3</span>
+          </a>
+          <a href="javascript:;" class="fa-icon filter filter-show"><i class="fa fa-filter"></i></a>
+        </div>
+      </div>
+      <div class="filter-nav">
+        <a href="advice.html">Advice</a>
+        <a href="javascript:;">Recent</a>
+        <a href="javascript:;" class="current">Popular</a>
+      </div>
+    </header>
+    <!-- banner -->
+    <div class="banner">
+      <div class="banner-img">
+        <img src="imgs/banner-01.png">
+      </div>
+      <div class="banner-text">
+        <div>
+          <p>New Collection</p>
+          <a href="javascript:;">Out now!</a>
+        </div>
+        <a href="javascript:;" class="btn btn-discover fr">DISCOVER</a>
+      </div>
+    </div>
+    <!-- 搜索 -->
+    <div class="search">
+      <a href="javascript:;" class="search-submit"><i class="fa fa-search"></i></a>
+      <input class="search-text" type="text" placeholder="Search a item...">
+    </div>
+    <!-- 热门商品 -->
+    <div class="product-info">
+      <span class="shot-line"></span>
+      <p>OUR POPULAR PRODUCTS</p>
+      <span class="shot-line"></span>
+    </div>
+    <!-- 商品列表 -->
+    <div class="products">
+      <ul class="products-list clearfix">
+        <li class="products-list-item">
+          <a href="javascript:;" class="list-item-content">
+            <div class="item-content-img">
+              <img src="imgs/01.png">
+            </div>
+            <div class="item-content-info">
+              <p class="item-content-info-name ellipsis">Pink Shirt Pink Shirt Pink Shirt</p>
+              <p class="item-content-info-price">$<span class="product-price">249,00</span></p>
+            </div>
+          </a>
+        </li>
+        <li class="products-list-item">
+          <a href="javascript:;" class="list-item-content">
+            <div class="item-content-img">
+              <img src="imgs/02.png">
+            </div>
+            <div class="item-content-info">
+              <p class="item-content-info-name ellipsis">Checked Shirt</p>
+              <p class="item-content-info-price">$<span class="product-price">50,00</span></p>
+            </div>
+          </a>
+        </li>
+        <li class="products-list-item">
+          <a href="javascript:;" class="list-item-content">
+            <div class="item-content-img">
+              <img src="imgs/03.png">
+            </div>
+            <div class="item-content-info">
+              <p class="item-content-info-name ellipsis">Red Polo Shirt</p>
+              <p class="item-content-info-price">$<span class="product-price">181,00</span></p>
+            </div>
+          </a>
+        </li>
+        <li class="products-list-item">
+          <a href="javascript:;" class="list-item-content">
+            <div class="item-content-img">
+              <img src="imgs/04.png">
+            </div>
+            <div class="item-content-info">
+              <p class="item-content-info-name ellipsis">Awesome Dress</p>
+              <p class="item-content-info-price">$<span class="product-price">372,00</span></p>
+            </div>
+          </a>
+        </li>
+        <li class="products-list-item">
+          <a href="javascript:;" class="list-item-content">
+            <div class="item-content-img">
+              <img src="imgs/05.png">
+            </div>
+            <div class="item-content-info">
+              <p class="item-content-info-name ellipsis">Awesome Dress</p>
+              <p class="item-content-info-price">$<span class="product-price">372,00</span></p>
+            </div>
+          </a>
+        </li>
+        <li class="products-list-item">
+          <a href="javascript:;" class="list-item-content">
+            <div class="item-content-img">
+              <img src="imgs/06.png">
+            </div>
+            <div class="item-content-info">
+              <p class="item-content-info-name ellipsis">Awesome Dress</p>
+              <p class="item-content-info-price">$<span class="product-price">372,00</span></p>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!-- 正在加载按钮 -->
+    <div class="onload">
+      <i class="fa fa-spinner"></i>
+    </div>
+    <!-- 查看所有商品按钮 -->
+    <div class="all-products">
+      <a href="javascript:;" class="btn btn-all-products">View all Items</a>
+    </div>
+  </div>
+  <script src="js/jquery-2.1.4.min.js"></script>
+  <script src="js/baidu-touch.js"></script>
+  <script src="js/index.js"></script>
+</body>
+</html>
