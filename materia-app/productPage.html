@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>product information</title>
+  <script src="js/rem-fontSize.js"></script>
+  <link rel="stylesheet" href="css/mobilereset.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/productPage.css">
+</head>
+<body>
+  <div id="wrap">
+    <!-- 遮罩层 -->
+    <div class="mask"></div>
+    <!-- 购物车 -->
+    <div class="mask-shopcar">
+      <div class="mask-shopcar-header">
+        <div class="clearfix">
+          <h1 class="fl">Your Cart</h1>
+          <a href="javascript:;" class="fa-icon shopcar-close fr"><i class="fa fa-close"></i></a>
+        </div>
+      </div>
+      <div class="shopcar-cont">
+        <ul class="shopcar-list">
+          <li class="shopcar-list-item">
+            <div class="shopcar-product">
+              <div class="shopcar-product-delete fl"><i class="fa fa-trash-o"></i></div>
+              <div class="shopcar-product-info fl">
+                <div class="product-info-img fl">
+                  <img src="imgs/01-small.png">
+                </div>
+                <div class="product-info-text fl">
+                  <p class="info-text-name ellipsis">Muffin Dress Secords Rodius</p>
+                  <p class="info-text-size">Size: <span>S</span></p>
+                  <p class="info-text-price">$<span>112,00</span></p>
+                </div>
+                <div class="product-info-num fr">
+                  <div class="info-num-num fl">1</div>
+                  <div class="info-num-control fr">
+                    <a href="javascript:;" class="info-num-add"><i class="fa fa-chevron-up"></i></a>
+                    <a href="javascript:;" class="info-num-cut disable"><i class="fa fa fa-chevron-down"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="shopcar-list-item">
+            <div class="shopcar-product">
+              <div class="shopcar-product-delete fl"><i class="fa fa-trash-o"></i></div>
+              <div class="shopcar-product-info fl">
+                <div class="product-info-img fl">
+                  <img src="imgs/02-small.png">
+                </div>
+                <div class="product-info-text fl">
+                  <p class="info-text-name ellipsis">Gorgeus Red Cap</p>
+                  <p class="info-text-size">Size: <span>S</span></p>
+                  <p class="info-text-price">$<span>78,00</span></p>
+                </div>
+                <div class="product-info-num fr">
+                  <div class="info-num-num fl">1</div>
+                  <div class="info-num-control fr">
+                    <a href="javascript:;" class="info-num-add"><i class="fa fa-chevron-up"></i></a>
+                    <a href="javascript:;" class="info-num-cut disable"><i class="fa fa fa-chevron-down"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="shopcar-list-item">
+            <div class="shopcar-product">
+              <div class="shopcar-product-delete fl"><i class="fa fa-trash-o"></i></div>
+              <div class="shopcar-product-info fl">
+                <div class="product-info-img fl">
+                  <img src="imgs/03-small.png">
+                </div>
+                <div class="product-info-text fl">
+                  <p class="info-text-name ellipsis">Black Trainers</p>
+                  <p class="info-text-size">Size: <span>XL</span></p>
+                  <p class="info-text-price">$<span>256,00</span></p>
+                </div>
+                <div class="product-info-num fr">
+                  <div class="info-num-num fl">1</div>
+                  <div class="info-num-control fr">
+                    <a href="javascript:;" class="info-num-add"><i class="fa fa-chevron-up"></i></a>
+                    <a href="javascript:;" class="info-num-cut disable"><i class="fa fa fa-chevron-down"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <p class="total-price">$<span class="total-price-num">100,00</span></p>
+        <div class="shopcar-cont-btn">
+          <a href="javascript:;" class="btn btn-proceed">PROCEED TO CHECKOUT</a>
+        </div>
+      </div>
+    </div>
+    <!-- 头部 -->
+    <header>
+      <div class="clearfix">
+        <a href="#" onClick="javascript :history.back(-1);" class="fa-icon chevron-left fl"><i class="fa fa-chevron-left"></i></a>
+        <h1 class="fl">Woman,Dresses</h1>
+        <a href="javascript:;" class="fa-icon shopcar shopcar-open fr">
+          <i class="fa fa-shopping-cart"></i>
+          <span class="shopcar-num">3</span>
+        </a>
+      </div>
+    </header>
+    <div class="btn-add clearfix">
+      <a href="javascript:;" class="btn-add-wishlist fl">ADD TO WISHLIST</a>
+      <a href="javascript:;" class="btn-add-cart fr">ADD TO CART</a>
+    </div>
+    <div class="show-product">
+      <div class="show-product-cont">
+        <div class="carousel" data-setting='{"autoplay":true,"duration":700,"delay":6000,"nav":true}'>
+          <ul>
+            <li><img src="imgs/product-page-01.png"></li>
+            <li><img src="imgs/01.png"></li>
+            <li><img src="imgs/04.png"></li>
+          </ul>
+          <div>
+            <span class="current"></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+        <div class="product-cont-info clearfix">
+          <p class="product-cont-info-name ellipsis fl">Elegant Pink Dresses</p>
+          <span class="product-cont-info-price fr">$605,00</span>
+        </div>
+      </div>
+    </div>
+    <div class="product-description">
+      <div class="product-description-title clearfix">
+        <a href="javascript:;" class="fl"><i class="fa fa-plus"></i></a>
+        <span class="fl">Description</span>
+      </div>
+    </div>
+    <div class="product-select">
+      <div class="product-select-cont">
+        <div class="product-select-cont-type product-select-cont-color">
+          <div class="select-cont-type-title">
+            <a href="javascript:;"><i class="fa fa-adjust"></i></a>
+            <span>Colour:</span>
+          </div>
+          <div class="select-cont-type-info">Choose a color for item</div>
+          <div class="select-cont-type-list">
+            <a href="javascript:;" class="select-cont-type-list-item01"><i class="fa fa-check-circle"></i></a>
+            <a href="javascript:;" class="select-cont-type-list-item02 selected"><i class="fa fa-check-circle"></i></a>
+            <a href="javascript:;" class="select-cont-type-list-item03"><i class="fa fa-check-circle"></i></a>
+          </div>
+        </div>
+        <div class="product-select-cont-type product-select-cont-size">
+          <div class="select-cont-type-title">
+            <a href="javascript:;"><i class="fa fa-plus-square"></i></a>
+            <span>Size:</span>
+          </div>
+          <div class="select-cont-type-info">Size available for this item</div>
+          <div class="select-cont-type-list">
+            <a href="javascript:;" class="select-cont-type-list-item">6</a>
+            <a href="javascript:;" class="select-cont-type-list-item selected">8</a>
+            <a href="javascript:;" class="select-cont-type-list-item">10</a>
+            <a href="javascript:;" class="select-cont-type-list-item">12</a>
+            <a href="javascript:;" class="select-cont-type-list-item">14</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="product-add-cart">
+      <a href="javascript:;">Add to Cart</a>
+    </div>
+    <div class="share">
+      <div class="share-title"></div>
+      <ul class="share-list clearfix">
+        <li class="share-list-item">
+          <a href="javascript:;" class="twitter"><i class="fa fa-twitter"></i></a>
+          <span>205</span>
+        </li>
+        <li class="share-list-item">
+          <a href="javascript:;" class="facebook"><i class="fa fa-facebook"></i></a>
+          <span>332</span>
+        </li>
+        <li class="share-list-item">
+          <a href="javascript:;" class="pinterest"><i class="fa fa-pinterest-p"></i></a>
+          <span>112</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="js/jquery-2.1.4.min.js"></script>
+  <script src="js/baidu-touch.js"></script>
+  <script src="js/carousel.js"></script>
+  <script src="js/productPage.js"></script>
+</body>
+</html>
