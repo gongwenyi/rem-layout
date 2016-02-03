@@ -98,6 +98,57 @@ $(function(){
       $(this).addClass('selected').siblings().removeClass('selected');
     })
   });
+  // mask-filter中价格区间拖拽
+  var $filterContSelectPrice = $('.filter-cont-select-price'),
+      $priceBar = $filterContSelectPrice.find('.price-bar'),
+      $priceBarMax = $priceBar.find('.price-bar-max'),
+      $priceBarMaxBtn = $priceBar.find('.price-bar-max-btn'),
+      $priceBarMin = $priceBar.find('.price-bar-min'),
+      $priceBarMinBtn = $priceBar.find('.price-bar-min-btn'),
+      $priceNum = $('.price-num'),
+      $priceNumMin = $priceNum.find('.price-num-min span'),
+      $priceNumMax = $priceNum.find('.price-num-max span');
+  var priceBarWidth = parseInt($priceBar.width()),  // 价格区间的最大长度
+      priceBarMaxWidth = parseInt($priceBarMax.width()), // 最大价格的长度
+      priceBarMinWidth = parseInt($priceBarMin.width()); // 最大价格的长度
+  // 拖拽最大价格滑块
+  var maxBtnx;
+  touch.on($priceBarMaxBtn, 'touchstart', function(ev){
+    ev.preventDefault();
+  });
+  touch.on($priceBarMaxBtn, 'drag', function(ev){
+    maxBtnx = maxBtnx || 0;
+    // log("当前x值为:" + maxBtnx + ", 当前y值为:" + dy +".");
+    var offx = -(maxBtnx + ev.x); //.price-bar-max-btn最大价格滑块拖动的距离
+    offx = offx<0 ? 0 : offx;
+    var barMaxWidth = priceBarMaxWidth - offx;  //修改.price-bar-max的宽度
+    barMaxWidth = barMaxWidth<$priceBarMin.width()+28 ? $priceBarMin.width()+28 : barMaxWidth; // 控制最大价格滑块不能滑动到最小价格滑块的左边
+    var priceNumMax = parseInt(barMaxWidth/priceBarWidth*1000); // 最大价格
+    $priceBarMax.width(barMaxWidth);
+    $priceNumMax.html(priceNumMax);
+  });
+  touch.on($priceBarMaxBtn, 'dragend', function(ev){
+    maxBtnx += ev.x;
+  });
+  // 拖拽最小价格滑块
+  var minBtnx;
+  touch.on($priceBarMinBtn, 'touchstart', function(ev){
+    ev.preventDefault();
+  });
+  touch.on($priceBarMinBtn, 'drag', function(ev){
+    minBtnx = minBtnx || 0;
+    // log("当前x值为:" + minBtnx + ", 当前y值为:" + dy +".");
+    var offx = (minBtnx + ev.x); //.price-bar-min-btn最小价格滑块拖动的距离
+    offx = offx<0 ? 0 : offx;
+    var barMinWidth = priceBarMinWidth + offx;  //修改.price-bar-min的宽度
+    barMinWidth = barMinWidth>$priceBarMax.width()-28 ? $priceBarMax.width()-28 : barMinWidth; // 控制最小价格滑块不能滑动到最大价格滑块的右边
+    var priceNumMin = parseInt(barMinWidth/priceBarWidth*1000); // 最大价格
+    $priceBarMin.width(barMinWidth);
+    $priceNumMin.html(priceNumMin);
+  });
+  touch.on($priceBarMinBtn, 'dragend', function(ev){
+    minBtnx += ev.x;
+  });
 
   // 服装类型选择
   var $typeDresses = $('.type-dresses'),

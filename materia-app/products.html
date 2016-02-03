@@ -4,26 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <title>our products</title>
-  <script>
-    (function (doc, win) {
-      var docEl = doc.documentElement,
-        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
-        recalc = function () {
-          var clientWidth = document.getElementById('wrap').offsetWidth || docEl.clientWidth;
-          if (!clientWidth) return;
-          var dpr = window.devicePixelRatio; //设备像素比
-          //此处的100为页面html设置的字体大小值（为方便计算一般用100px）
-          //此处的320为视觉稿宽度的一半
-          //根据设备可视区的宽度以及设备像素比动态改变fontSize值
-          //如果计算dpr,在iphone6 plus等dpr较高的浏览器中布局会错乱
-          // docEl.style.fontSize = (dpr / 2) * 100 * (clientWidth  / 320) + 'px';
-          docEl.style.fontSize = 100 * (clientWidth  / 320) + 'px';
-        };
-      if (!doc.addEventListener) return;
-      win.addEventListener(resizeEvt, recalc, false);
-      doc.addEventListener('DOMContentLoaded', recalc, false);
-    })(document, window);
-  </script>
+  <script src="js/rem-fontSize.js"></script>
   <link rel="stylesheet" href="css/mobilereset.css">
   <link rel="stylesheet" href="css/font-awesome.min.css">
   <link rel="stylesheet" href="css/products.css">
@@ -237,7 +218,22 @@
             <span>Price</span>
           </div>
           <div class="filter-cont-select-cont clearfix">
-
+            <div class="price-bar">
+              <div class="price-bar-max">
+                <a href="javascript:;" class="price-bar-max-btn"></a>
+              </div>
+              <div class="price-bar-min">
+                <a href="javascript:;" class="price-bar-min-btn"></a>
+              </div>
+            </div>
+            <div class="price-num clearfix">
+              <a href="javascript:;" class="price-num-min fl">
+                $<span>0</span>
+              </a>
+              <a href="javascript:;" class="price-num-max fr">
+                $<span>1000</span>
+              </a>
+            </div>
           </div>
         </div>
         <div class="filter-cont-select filter-cont-select-size">
@@ -314,7 +310,7 @@
     <div class="products">
       <ul class="products-list clearfix">
         <li class="products-list-item new">
-          <a href="javascript:;" class="list-item-content">
+          <a href="productPage.html" class="list-item-content">
             <div class="item-content-img">
               <img src="imgs/01.png">
             </div>
@@ -325,7 +321,7 @@
           </a>
         </li>
         <li class="products-list-item">
-          <a href="javascript:;" class="list-item-content">
+          <a href="productPage.html" class="list-item-content">
             <div class="item-content-img">
               <img src="imgs/02.png">
             </div>
@@ -336,7 +332,7 @@
           </a>
         </li>
         <li class="products-list-item">
-          <a href="javascript:;" class="list-item-content">
+          <a href="productPage.html" class="list-item-content">
             <div class="item-content-img">
               <img src="imgs/03.png">
             </div>
@@ -347,7 +343,7 @@
           </a>
         </li>
         <li class="products-list-item new">
-          <a href="javascript:;" class="list-item-content">
+          <a href="productPage.html" class="list-item-content">
             <div class="item-content-img">
               <img src="imgs/04.png">
             </div>
@@ -358,7 +354,7 @@
           </a>
         </li>
         <li class="products-list-item">
-          <a href="javascript:;" class="list-item-content">
+          <a href="productPage.html" class="list-item-content">
             <div class="item-content-img">
               <img src="imgs/05.png">
             </div>
@@ -369,7 +365,7 @@
           </a>
         </li>
         <li class="products-list-item">
-          <a href="javascript:;" class="list-item-content">
+          <a href="productPage.html" class="list-item-content">
             <div class="item-content-img">
               <img src="imgs/06.png">
             </div>

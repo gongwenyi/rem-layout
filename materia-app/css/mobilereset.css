@@ -20,10 +20,28 @@ html,
 body {
     width: 100%;
     min-width: 320px;
-    max-width: 640px;
+    max-width: 540px;
     margin: 0 auto;
     font-family: 'microsoft yahei', sans-serif;
 }
+html{
+    font-size: 100px;
+}
+/*@media screen and (min-device-width: 360px){
+    html{
+        font-size: 110px;
+    }
+}
+@media screen and (min-device-width: 375px){
+    html{
+        font-size: 117px;
+    }
+}
+@media screen and (min-device-width: 414px){
+    html{
+        font-size: 129px;
+    }
+}*/
 body {
     font-size: 12px;
 }

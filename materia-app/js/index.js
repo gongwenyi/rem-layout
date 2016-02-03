@@ -78,7 +78,6 @@ $(function(){
       $this.addClass('hold-delete');
       ev.preventDefault();
       setTimeout(function(){$this.parent().parent().remove();}, 200)
-
     })
   });
 
@@ -142,5 +141,5 @@ $(function(){
              +'</li>';
     }
     $productsList.html($productsList.html()+html);
-  }
+  };
 });
