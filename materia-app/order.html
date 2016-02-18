@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>your order</title>
+  <script src="js/rem-fontSize.js"></script>
+  <link rel="stylesheet" href="css/mobilereset.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/order.css">
+</head>
+<body>
+  <div id="wrap">
+    <!-- 头部 -->
+    <header>
+      <div class="clearfix">
+        <a href="#" onClick="javascript :history.back(-1);" class="fa-icon chevron-left fl"><i class="fa fa-chevron-left"></i></a>
+        <h1 class="fl">Checkout</h1>
+      </div>
+    </header>
+    <div class="title">Your Order</div>
+    <ul class="product-list">
+      <li class="product-list-item">
+        <a href="javascript:;" class="product-list-item-close"><i class="fa fa-close"></i></a>
+        <div class="product-list-item-img fl">
+          <img src="imgs/01-small.png">
+        </div>
+        <div class="product-list-item-info fl">
+          <p class="item-info-name ellipsis">Muffin Dressssssssssss</p>
+          <p>
+            <span class="item-info-size">SIZE: S</span>
+            <span class="item-info-num">x1</span>
+          </p>
+        </div>
+        <div class="product-list-item-price fr">$<span>112,00</span></div>
+      </li>
+      <li class="product-list-item">
+        <a href="javascript:;" class="product-list-item-close"><i class="fa fa-close"></i></a>
+        <div class="product-list-item-img fl">
+          <img src="imgs/02-small.png">
+        </div>
+        <div class="product-list-item-info fl">
+          <p class="item-info-name ellipsis">Gergeus Red Cup</p>
+          <p>
+            <span class="item-info-size">SIZE: 7</span>
+            <span class="item-info-num">x2</span>
+          </p>
+        </div>
+        <div class="product-list-item-price fr">$<span>25,00</span></div>
+      </li>
+      <li class="product-list-item">
+        <a href="javascript:;" class="product-list-item-close"><i class="fa fa-close"></i></a>
+        <div class="product-list-item-img fl">
+          <img src="imgs/03-small.png">
+        </div>
+        <div class="product-list-item-info fl">
+          <p class="item-info-name ellipsis">Black Trainers</p>
+          <p>
+            <span class="item-info-size">SIZE: 9.5</span>
+            <span class="item-info-num">x1</span>
+          </p>
+        </div>
+        <div class="product-list-item-price fr">$<span>392,00</span></div>
+      </li>
+    </ul>
+    <div class="shipping-and-order">
+      <div class="shipping">
+        <p class="fl">SHIPPING AND HANDLING</p>
+        <span class="fr">FREE SHIPPING</span>
+      </div>
+      <div class="order">
+        <p class="fl">ORDER TOTAL</p>
+        <P class="order-total-price fr">$<span>371,00</span></P>
+      </div>
+    </div>
+    <div class="pay-method">
+      <p class="pay-method-title">SELECT A PAY METHOD</p>
+      <ul class="pay-method-list">
+        <li class="pay-method-list-item selected">
+          <div class="list-item-select">
+            <a href="javascript:;" class="selected fl">
+              <i class="fa fa-circle"></i>
+              <i class="fa fa-dot-circle-o"></i>
+            </a>
+            <span>Paypal</span>
+          </div>
+          <div class="list-item-paypal-title">
+            <img src="imgs/paypal.png">
+          </div>
+          <div class="list-item-paypal-method">
+            <a href="javascript:;"><img src="imgs/bank-card-01.png"></a>
+            <a href="javascript:;"><img src="imgs/bank-card-02.png"></a>
+            <a href="javascript:;"><img src="imgs/bank-card-03.png"></a>
+            <a href="javascript:;"><img src="imgs/bank-card-04.png"></a>
+          </div>
+          <div class="list-item-paypal-faq"><a href="javascript:;">What is Paypal?</a></div>
+        </li>
+        <li class="pay-method-list-item">
+          <div class="list-item-select">
+            <a href="javascript:;" class="fl">
+              <i class="fa fa-circle"></i>
+              <i class="fa fa-dot-circle-o"></i>
+            </a>
+            <span>Cheque Payment</span>
+          </div>
+          <p class="list-item-text">Please send your cheque to Store Name, Store Street, Store Town, Store State/County, Store Postcode.</p>
+        </li>
+        <li class="pay-method-list-item">
+          <div class="list-item-select">
+            <a href="javascript:;" class="fl">
+              <i class="fa fa-circle"></i>
+              <i class="fa fa-dot-circle-o"></i>
+            </a>
+            <span>Direct Bank Transfer</span>
+          </div>
+          <p class="list-item-text">Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order won’t be shipped until the funds have cleared in our account..</p>
+        </li>
+      </ul>
+    </div>
+    <div class="btn-list">
+      <a href="javascript:;" class="btn-place-order">PLACE ORDER</a>
+      <a href="javascript:;" class="btn-cancel">CANCEL</a>
+    </div>
+  </div>
+  <script src="js/jquery-2.1.4.min.js"></script>
+  <script src="js/baidu-touch.js"></script>
+  <script src="js/billingDetails.js"></script>
+</body>
+</html>

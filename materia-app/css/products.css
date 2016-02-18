@@ -187,14 +187,17 @@ header .shopcar-num {
   max-height: 260px;
   overflow-y: auto;
 }
+.shopcar-list::-webkit-scrollbar {
+  display: none;
+}
 .shopcar-list .shopcar-list-item {
   width: 100%;
   height: 0.75rem;
   margin-bottom: 0.1rem;
   background-color: #f8f8f8;
   border-radius: 4px;
-  -webkit-box-shadow: 0 1px 1px #999999;
-  box-shadow: 0 1px 1px #999999;
+  -webkit-box-shadow: 0 1px 1px #cccccc;
+  box-shadow: 0 1px 1px #cccccc;
   overflow: hidden;
 }
 .shopcar-product {
@@ -235,8 +238,8 @@ header .shopcar-num {
   margin: 0.1rem 0.14rem 0.1rem 0.2rem;
   border-radius: 100%;
   background-color: #e9e9e9;
-  -webkit-box-shadow: 0 1px 3px #999999;
-  box-shadow: 0 1px 3px #999999;
+  -webkit-box-shadow: 0 1px 3px #cccccc;
+  box-shadow: 0 1px 3px #cccccc;
   overflow: hidden;
 }
 .shopcar-product .shopcar-product-info .product-info-img img {
@@ -489,8 +492,8 @@ header .shopcar-num {
 }
 .mask-filter-cont .filter-cont-select.filter-cont-select-size .size-item.selected {
   background-color: #67b0d6;
-  -webkit-box-shadow: 0 1px 2px #999999;
-  box-shadow: 0 1px 2px #999999;
+  -webkit-box-shadow: 0 1px 2px #cccccc;
+  box-shadow: 0 1px 2px #cccccc;
 }
 .type-dresses {
   position: relative;
@@ -544,8 +547,8 @@ header .shopcar-num {
 }
 .search {
   background-color: #f8f8f8;
-  -webkit-box-shadow: 0 1px 2px #999999;
-  box-shadow: 0 1px 2px #999999;
+  -webkit-box-shadow: 0 1px 2px #cccccc;
+  box-shadow: 0 1px 2px #cccccc;
 }
 .search .search-submit {
   display: inline-block;
@@ -574,8 +577,8 @@ header .shopcar-num {
   color: #fff;
   background-color: #a6a6ad;
   border-radius: 3px;
-  -webkit-box-shadow: 0 1px 2px #999999;
-  box-shadow: 0 1px 2px #999999;
+  -webkit-box-shadow: 0 1px 2px #cccccc;
+  box-shadow: 0 1px 2px #cccccc;
 }
 .filter-tabs .filter-tabs-item .filter-tabs-item-close {
   display: block;
@@ -617,8 +620,8 @@ header .shopcar-num {
   margin: 0 0.06rem;
   background-color: #f8f8f8;
   border-radius: 6px;
-  -webkit-box-shadow: 0 1px 2px #999999;
-  box-shadow: 0 1px 2px #999999;
+  -webkit-box-shadow: 0 1px 2px #cccccc;
+  box-shadow: 0 1px 2px #cccccc;
   overflow: hidden;
 }
 .item-content-img {
