@@ -22,7 +22,8 @@ body {
     min-width: 320px;
     max-width: 540px;
     margin: 0 auto;
-    font-family: 'microsoft yahei', sans-serif;
+    // font-family: 'microsoft yahei', sans-serif;
+    font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
 }
 html{
     font-size: 100px;
